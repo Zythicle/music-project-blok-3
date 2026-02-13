@@ -26,6 +26,11 @@ $car = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <main>
 
+<section>
+    <!-- Search -->
+     
+</section>
+
     <!-- FILTER -->
     <section>
         <div style="background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 10px;">
