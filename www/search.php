@@ -2,21 +2,11 @@
     <label for="zoekveld">Zoeken</label>
     <input type="search" name="zoekveld" id="zoekveld">
 
-    <label for="fuel">Filter op brandstof</label>
-    <select name="zoekterm" id="fuel">
-        <option value="">-- Alle brandstoffen --</option>
-        <option value="petrol">Petrol</option>
-        <option value="diesel">Diesel</option>
-        <option value="electric">Electric</option>
-        <option value="hybrid">Hybrid</option>
-    </select>
-
-    <label for="sorteer">Sorteer op</label>
+    <label for="sorteer">Filter op prijs</label>
     <select name="sorteer" id="sorteer">
-        <option value="">Geen</option>
-        <option value="brand">Brand</option>
-        <option value="model">Model</option>
-        <option value="year">Year</option>
+        <option value="">-- Prijs per dag --</option>
+        <option value="price_per_day ASC">Laagste prijs</option>
+        <option value="price_per_day DESC">Hoogste prijs</option>
     </select>
 
     <button type="submit">Zoek!</button>

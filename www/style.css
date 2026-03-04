@@ -799,161 +799,162 @@ footer p {
             }
         }
 
-/* Users Management Page */
-.users-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    flex: 1;
-}
+        /* Users Management Page */
+        .users-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
 
-.users-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    border-bottom: 3px solid #007bff;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    border-radius: 8px;
-}
+        .users-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 3px solid #007bff;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 8px;
+        }
 
-.users-header h1 {
-    font-size: 2.8rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
+        .users-header h1 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
 
-.users-header p {
-    font-size: 1.1rem;
-    color: #7f8c8d;
-    font-weight: 500;
-}
+        .users-header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
 
-.users-content {
-    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e9ecef;
-    overflow-x: auto;
-}
+        .users-content {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9ecef;
+            overflow-x: auto;
+        }
 
-.table-wrapper {
-    overflow-x: auto;
-}
+        .table-wrapper {
+            overflow-x: auto;
+        }
 
-.users-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-}
+        .users-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
 
-.users-table thead {
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-    color: #fff;
-    position: sticky;
-    top: 0;
-}
+        .users-table thead {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: #fff;
+            position: sticky;
+            top: 0;
+        }
 
-.users-table th {
-    padding: 1.2rem;
-    text-align: left;
-    font-weight: 700;
-    border-bottom: 2px solid #0056b3;
-}
+        .users-table th {
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid #0056b3;
+        }
 
-.users-table tbody tr {
-    border-bottom: 1px solid #e9ecef;
-    transition: all 0.3s ease;
-}
+        .users-table tbody tr {
+            border-bottom: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
 
-.users-table tbody tr:hover {
-    background-color: #f0f8ff;
-    transform: scale(1.01);
-}
+        .users-table tbody tr:hover {
+            background-color: #f0f8ff;
+            transform: scale(1.01);
+        }
 
-.users-table td {
-    padding: 1.1rem 1.2rem;
-    color: #555;
-}
+        .users-table td {
+            padding: 1.1rem 1.2rem;
+            color: #555;
+        }
 
-.username-cell {
-    color: #2c3e50;
-    font-weight: 600;
-}
+        .username-cell {
+            color: #2c3e50;
+            font-weight: 600;
+        }
 
-.email-cell a,
-.phone-cell a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .email-cell a,
+        .phone-cell a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-.email-cell a:hover,
-.phone-cell a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
+        .email-cell a:hover,
+        .phone-cell a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
 
-.role-badge {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
+        .role-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-.role-badge.user {
-    background-color: #d4edda;
-    color: #155724;
-}
+        .role-badge.user {
+            background-color: #d4edda;
+            color: #155724;
+        }
 
-.role-badge.employee {
-    background-color: #cfe2ff;
-    color: #084298;
-}
+        .role-badge.employee {
+            background-color: #cfe2ff;
+            color: #084298;
+        }
 
-.role-badge.administrator {
-    background-color: #f8d7da;
-    color: #721c24;
-}
+        .role-badge.administrator {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
 
-.no-users {
-    text-align: center;
-    padding: 3rem !important;
-    color: #7f8c8d;
-    font-size: 1.1rem;
-}
+        .no-users {
+            text-align: center;
+            padding: 3rem !important;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
 
-@media (max-width: 1024px) {
-    .users-table th,
-    .users-table td {
-        padding: 0.9rem 0.8rem;
-        font-size: 0.9rem;
-    }
-}
+        @media (max-width: 1024px) {
 
-@media (max-width: 768px) {
-    .users-header h1 {
-        font-size: 2rem;
-    }
+            .users-table th,
+            .users-table td {
+                padding: 0.9rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
 
-    .users-table {
-        font-size: 0.85rem;
-    }
+        @media (max-width: 768px) {
+            .users-header h1 {
+                font-size: 2rem;
+            }
 
-    .users-table th,
-    .users-table td {
-        padding: 0.75rem 0.6rem;
-    }
+            .users-table {
+                font-size: 0.85rem;
+            }
 
-    .role-badge {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-    }
-}
+            .users-table th,
+            .users-table td {
+                padding: 0.75rem 0.6rem;
+            }
 
-@media (max-width: 480px) {
+            .role-badge {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
             nav a {
                 padding: 0.5rem 0.75rem;
                 font-size: 0.9rem;
