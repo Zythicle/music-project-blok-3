@@ -21,6 +21,7 @@ $sql = "SELECT * FROM users WHERE email = '$email'";
 $result = mysqli_query($conn, $sql);
 $user = mysqli_fetch_assoc($result); // 1 gebruiker halen wij op uit db.
 
+
 if(is_array($user)){
     if($password == $user['password']){
 
@@ -33,9 +34,13 @@ if(is_array($user)){
         if($user['role'] == 'member'){
             header("Location: dashboard_user.php");
             exit;
+            
         } else if($user['role'] == 'employee'){
             header("Location: dashboard.php");
             exit;
         }
     }
-}
+} else {
+    echo "Ongeldige inloggegevens";
+    exit;
+}   

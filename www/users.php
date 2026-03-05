@@ -64,6 +64,11 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
     </div>
 </div>
 
+<!-- terug naar index -->
+<div class="back-link">
+    <a href="dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
+</div>
+
 <?php include 'footer.php'; ?>
 
 </body>

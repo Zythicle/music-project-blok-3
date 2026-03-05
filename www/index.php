@@ -2,6 +2,11 @@
 
 session_start();
 
+if(!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit;
+}
+
 require 'database.php';
 
 if (isset($_GET['fuel_type']) && !empty($_GET['fuel_type'])) {

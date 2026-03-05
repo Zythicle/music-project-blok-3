@@ -24,7 +24,7 @@ session_start();
 </div>
 
 <div class="dashboard-actions" style="margin-top: 20px;">
- <a href="car_create.php" class="btn btn-secondary">Beheer Auto's</a>
+ <a href="car_create.php" class="btn btn-secondary">Voeg Auto Toe</a>
 </div>
 <?php include 'footer.php'; ?>
 

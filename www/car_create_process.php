@@ -19,7 +19,7 @@ $image = $_POST['image'];
 require 'database.php';
 
 
-$sql = "INSERT INTO car (id, brand, model, year, license_plate, fuel_type, seats, transmission, price_per_day, status, image, added_at) VALUES ('$id', '$brand', '$model', '$year', '$license_plate', '$fuel_type', '$seats', '$transmission', '$price_per_day', '$status', '$image', NOW())";
+$sql = "INSERT INTO car (brand, model, year, license_plate, fuel_type, seats, transmission, price_per_day, status, image, added_at) VALUES ('$brand', '$model', '$year', '$license_plate', '$fuel_type', '$seats', '$transmission', '$price_per_day', '$status', '$image', NOW())";
 if (mysqli_query($conn, $sql)) {
     header("Location: index.php");
 }
