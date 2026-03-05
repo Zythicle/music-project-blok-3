@@ -5,17 +5,16 @@ if(empty($_POST['brand'])){
     exit;
 }   
 
-$id = $_POST['id'] ?? '';
-$brand = $_POST['brand'] ?? '';
-$model = $_POST['model'] ?? '';
-$year = $_POST['year'] ?? '';
-$license_plate = $_POST['license_plate'] ?? '';
-$fuel_type = $_POST['fuel_type'] ?? '';
-$seats = (int) ($_POST['seats'] ?? 0);
-$transmission = $_POST['transmission'] ?? '';
-$price_per_day = (int) ($_POST['price_per_day'] ?? 0);
-$status = $_POST['status'] ?? '';
-$image = $_POST['image'] ?? '';
+$brand = $_POST['brand'];
+$model = $_POST['model'];
+$year = $_POST['year'];
+$license_plate = $_POST['license_plate'];
+$fuel_type = $_POST['fuel_type'];
+$seats = (int) ($_POST['seats']);
+$transmission = $_POST['transmission'];
+$price_per_day = (int) ($_POST['price_per_day']);
+$status = $_POST['status'];
+$image = $_POST['image'];
 
 require 'database.php';
 

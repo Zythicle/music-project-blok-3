@@ -17,8 +17,7 @@ if(empty($password)){
     exit;
 }
 
-$sql = "SELECT * FROM users WHERE email = '$email' ";
-
+$sql = "SELECT * FROM users WHERE email = '$email'";
 $result = mysqli_query($conn, $sql);
 $user = mysqli_fetch_assoc($result); // 1 gebruiker halen wij op uit db.
 
@@ -28,9 +27,15 @@ if(is_array($user)){
         session_start();
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-        // $_SES SION['role'] = $user['role'];
+        $_SESSION['role'] = $user['role'];
         
 
-        header("Location: dashboard.php");
+        if($user['role'] == 'member'){
+            header("Location: dashboard_user.php");
+            exit;
+        } else if($user['role'] == 'employee'){
+            header("Location: dashboard.php");
+            exit;
+        }
     }
 }

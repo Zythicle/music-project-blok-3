@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require 'database.php';
 $sql = "SELECT * FROM users";
 $result = mysqli_query($conn, $sql);
@@ -32,7 +35,6 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th>Phone</th>
                         <th>Role</th>
                     </tr>
                 </thead>
@@ -47,11 +49,6 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                 <td class="email-cell">
                                     <a href="mailto:<?php echo ($user['email']); ?>">
                                         <?php echo ($user['email']); ?>
-                                    </a>
-                                </td>
-                                <td class="phone-cell">
-                                    <a href="tel:<?php echo ($user['phone']); ?>">
-                                        <?php echo ($user['phone']); ?>
                                     </a>
                                 </td>
                                 <td>

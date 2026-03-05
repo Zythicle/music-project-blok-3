@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require 'database.php';
 
 if (isset($_GET['fuel_type']) && !empty($_GET['fuel_type'])) {
@@ -6,6 +9,11 @@ if (isset($_GET['fuel_type']) && !empty($_GET['fuel_type'])) {
     $sql = "SELECT * FROM car WHERE fuel_type = '$fuel_type'";
 } else {
     $sql = "SELECT * FROM car";
+}
+
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $search = mysqli_real_escape_string($conn, $_GET['search']);
+    $sql = "SELECT * FROM car WHERE brand LIKE '%$search%' OR model LIKE '%$search%'";
 }
 
 if (isset($_GET['sorteer']) && !empty($_GET['sorteer'])) {
@@ -17,6 +25,7 @@ if (isset($_GET['sorteer']) && !empty($_GET['sorteer'])) {
 
 $result = mysqli_query($conn, $sql);
 $car = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
 ?>
 
 
@@ -79,8 +88,10 @@ $car = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <!-- Main content -->
 <main>
     <!-- FILTER -->
-    <section>
-        <div style="background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 10px;">
+   <div class="search-section">
+        <div class="filter-container">
+            <!-- Fuel Type Filter -->
+            <div class="filter-group">
             <strong>Filter op brandstof:</strong>
             <a href="index.php">All</a> |
             <a href="?fuel_type=Diesel">Diesel</a> |
@@ -88,40 +99,63 @@ $car = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <a href="?fuel_type=Petrol">Petrol</a> |
             <a href="?fuel_type=Hybrid">Hybrid</a>
         </div>
+</div>
+</section>
 
-    </section>
-
-     <!-- FILTER 2 -->
-    <section>
-        <div style="background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 10px;">
+    
+<!-- FILTER 2 -->
+    <div class="search-section">
+        <div class="filter-container">
+            <!-- Fuel Type Filter -->
             <strong>Filter op Prijs per dag:</strong>
             <a href="?sorteer=price_per_day ASC">Laagste prijs</a> |
             <a href="?sorteer=price_per_day DESC">Hoogste prijs</a>
         </div>
+</section>
+        <form method="GET" class="search-form">
+            <div class="search-input-group">
+                <input type="text" name="search" placeholder="🔍 Zoek op merk, model..." class="search-input" value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+                <button type="submit" class="search-btn">Zoeken</button>
+            </div>
+        </form>
+    </div>
 
-    </section>
 
 
-    
     <!-- CAR LIST -->
     <div class="car-list">
-            <?php foreach ($car as $c): ?>
-                <div class="car-item">
-                    <div class="car-image">
-                        <img 
-                            src="<?php echo ($c['image']); ?>" 
-                            alt="<?php echo ($c['brand'] . ' ' . $c['model']); ?>" 
-                            width="200"
-                        >
-                    </div>
+            <?php 
+                foreach ($car as $c): ?>
+                    <div class="car-item">
+                        <div class="car-image">
+                            <img 
+                                src="<?php echo ($c['image']); ?>" 
+                                alt="<?php echo ($c['brand'] . ' ' . $c['model']); ?>" 
+                                width="200"
+                            >
+                        </div>
 
-                    <h3><?php echo ($c['brand'] . ' ' . $c['model']); ?></h3>
-                    <p>Status: <?php echo ($c['status']); ?></p>
-                    <p>Seats: <?php echo ($c['seats']); ?></p>
-                    <p>Price per day: €<?php echo ($c['price_per_day']); ?></p>
-                    <a href="car_detail.php?car_id=<?php echo $c['id']; ?>">Rent this car</a>
-                </div>
-            <?php endforeach; ?>
+                        <div class="car-content">
+                            <h3><?php echo ($c['brand'] . ' ' . $c['model']); ?></h3>
+                            <div class="car-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Status</span>
+                                    <span class="spec-value"><?php echo ($c['status']); ?></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Seats</span>
+                                    <span class="spec-value"><?php echo ($c['seats']); ?></span>
+                                </div>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-tag">€<?php echo ($c['price_per_day']); ?></span>
+                                <span class="price-period">per dag</span>
+                            </div>
+                            <a href="car_detail.php?car_id=<?php echo $c['id']; ?>">Huur deze auto</a>
+                        </div>
+                    </div>
+                <?php endforeach;
+            ?>
     </div>
 </main>
 
