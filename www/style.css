@@ -178,7 +178,7 @@ nav a:hover {
 
 .filter-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 30px;
 }
 
@@ -1158,6 +1158,10 @@ footer a:hover {
     .search-section {
         margin: -30px 15px 30px;
         padding: 25px;
+    }
+
+    .filter-container {
+        flex-direction: column;
     }
 
     .filter-buttons {
