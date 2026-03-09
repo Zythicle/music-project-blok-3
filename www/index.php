@@ -134,29 +134,29 @@ $car = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <div class="car-item">
                         <div class="car-image">
                             <img 
-                                src="<?php echo ($c['image']); ?>" 
-                                alt="<?php echo ($c['brand'] . ' ' . $c['model']); ?>" 
+                                src="<?php echo htmlspecialchars($c['image']); ?>" 
+                                alt="<?php echo htmlspecialchars($c['brand'] . ' ' . $c['model']); ?>" 
                                 width="200"
                             >
                         </div>
 
                         <div class="car-content">
-                            <h3><?php echo ($c['brand'] . ' ' . $c['model']); ?></h3>
+                            <h3><?php echo htmlspecialchars($c['brand'] . ' ' . $c['model']); ?></h3>
                             <div class="car-specs">
                                 <div class="spec-item">
                                     <span class="spec-label">Status</span>
-                                    <span class="spec-value"><?php echo ($c['status']); ?></span>
+                                    <span class="spec-value"><?php echo htmlspecialchars($c['status']); ?></span>
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">Seats</span>
-                                    <span class="spec-value"><?php echo ($c['seats']); ?></span>
+                                    <span class="spec-value"><?php echo htmlspecialchars($c['seats']); ?></span>
                                 </div>
                             </div>
                             <div class="car-price">
-                                <span class="price-tag">€<?php echo ($c['price_per_day']); ?></span>
+                                <span class="price-tag">€<?php echo htmlspecialchars($c['price_per_day']); ?></span>
                                 <span class="price-period">per dag</span>
                             </div>
-                            <a href="car_detail.php?car_id=<?php echo $c['id']; ?>">Huur deze auto</a>
+                            <a href="car_detail.php?car_id=<?php echo htmlspecialchars($c['id']); ?>">Huur deze auto</a>
                         </div>
                     </div>
                 <?php endforeach;

@@ -14,7 +14,7 @@ session_start();
 
 <div class="dashboard-container" style="margin-bottom: 20px;">
     <div class="dashboard-header">
-        <h2>Welkom terug, <strong><?php echo $_SESSION['username']; ?></strong>!</h2>
+        <h2>Welkom terug, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>!</h2>
     </div>
 </div>
 

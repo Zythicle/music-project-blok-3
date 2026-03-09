@@ -1,7 +1,7 @@
 <?php
 
 if(empty($_POST['brand'])){
-    echo "Naam mag niet leeg zijn";
+    echo htmlspecialchars("Naam mag niet leeg zijn");
     exit;
 }   
 

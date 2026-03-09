@@ -23,7 +23,7 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <div class="users-container">
     <div class="users-header">
         <h1>User Management</h1>
-        <p>Total Users: <strong><?php echo count($users); ?></strong></p>
+        <p>Total Users: <strong><?php echo htmlspecialchars(count($users)); ?></strong></p>
     </div>
 
     <div class="users-content">
@@ -42,18 +42,18 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <?php foreach ($users as $user): ?>
                             <tr class="user-row">
                                 <td class="username-cell">
-                                    <strong><?php echo ($user['username']); ?></strong>
+                                    <strong><?php echo htmlspecialchars($user['username']); ?></strong>
                                 </td>
-                                <td><?php echo ($user['firstname']); ?></td>
-                                <td><?php echo ($user['lastname']); ?></td>
+                                <td><?php echo htmlspecialchars($user['firstname']); ?></td>
+                                <td><?php echo htmlspecialchars($user['lastname']); ?></td>
                                 <td class="email-cell">
-                                    <a href="mailto:<?php echo ($user['email']); ?>">
-                                        <?php echo ($user['email']); ?>
+                                    <a href="mailto:<?php echo htmlspecialchars($user['email']); ?>">
+                                        <?php echo htmlspecialchars($user['email']); ?>
                                     </a>
                                 </td>
                                 <td>
-                                    <span class="role-badge <?php echo ($user['role']); ?>">
-                                        <?php echo (($user['role'])); ?>
+                                    <span class="role-badge <?php echo htmlspecialchars($user['role']); ?>">
+                                        <?php echo htmlspecialchars($user['role']); ?>
                                     </span>
                                 </td>
                             </tr>

@@ -20,7 +20,7 @@ if( empty($_POST['email_form']) ||
     empty($_POST['phone_form']) ||
     empty($_POST['mobile_form'])
     ){
-        echo "Een van de velden is leeg";
+        echo htmlspecialchars("Een van de velden is leeg");
     exit;
 }
 
@@ -35,17 +35,17 @@ if( strlen($_POST['email_form']) < 3 ||
     strlen($_POST['mobile_form']) < 3
 
 ){
-    echo "Voor elk veld moet er minstens drie karakters opgegeven worden";
+    echo htmlspecialchars("Voor elk veld moet er minstens drie karakters opgegeven worden");
     exit;
 }
 
 if( strlen($_POST['password_form']) < 8 ){
-    echo "wachtwoord moet minstens 8 karakters hebben";
+    echo htmlspecialchars("wachtwoord moet minstens 8 karakters hebben");
     exit;
 }
 
 if (!filter_var($_POST['email_form'], FILTER_VALIDATE_EMAIL)) {
-    echo "Vul een geldig emailadres in";
+    echo htmlspecialchars("Vul een geldig emailadres in");
     exit;
 }
 
@@ -75,7 +75,7 @@ if($result){
     exit;
 }
 else{
-    echo 'er is iets fout gegaan: ' . mysqli_error($conn);
+    echo htmlspecialchars('er is iets fout gegaan: ' . mysqli_error($conn));
 }
 
 

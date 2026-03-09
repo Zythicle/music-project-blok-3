@@ -8,12 +8,12 @@ $email = $_POST['email_form'];
 $password = $_POST['password_form'];
 
 if(empty($email)){
-    echo "Email mag niet leeg zijn";
+    echo htmlspecialchars("Email mag niet leeg zijn");
     exit;
 }
 
 if(empty($password)){
-    echo "Wachtwoord mag niet leeg zijn";
+    echo htmlspecialchars("Wachtwoord mag niet leeg zijn");
     exit;
 }
 
@@ -41,6 +41,6 @@ if(is_array($user)){
         }
     }
 } else {
-    echo "Ongeldige inloggegevens";
+    echo htmlspecialchars("Ongeldige inloggegevens");
     exit;
 }   

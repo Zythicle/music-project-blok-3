@@ -51,9 +51,9 @@ if(isset($_GET['zoekterm']) && !empty($_GET['zoekterm'])){
 
     if(!empty($cars)):
         foreach($cars as $c):
-            echo "<div>";
-            echo $c['brand'] . " " . $c['model'] . " " . $c['year'] . " " . $c['license_plate'] . " " . $c['fuel_type'] . " " . $c['seats'] . " " . $c['transmission'] . " " . $c['price_per_day'] . " " . $c['status'];
-            echo "</div>";
+            echo htmlspecialchars("<div>");
+            echo htmlspecialchars($c['brand'] . " " . $c['model'] . " " . $c['year'] . " " . $c['license_plate'] . " " . $c['fuel_type'] . " " . $c['seats'] . " " . $c['transmission'] . " " . $c['price_per_day'] . " " . $c['status']);
+            echo htmlspecialchars("</div>");
         endforeach;
     endif;
 
@@ -158,15 +158,15 @@ if(isset($_GET['zoekveld']) && !empty($_GET['zoekveld'])){
             <?php if(!empty($cars)): ?>
                 <?php foreach($cars as $c): ?>
                     <tr>
-                        <td><?php echo $c['brand']?></td>
-                        <td><?php echo $c['model']?></td>
-                        <td><?php echo $c['year']?></td>
-                        <td><?php echo $c['license_plate']?></td>
-                        <td><?php echo $c['fuel_type']?></td>
-                        <td><?php echo $c['seats']?></td>
-                        <td><?php echo $c['transmission']?></td>
-                        <td><?php echo $c['price_per_day']?></td>
-                        <td><?php echo $c['status']?></td>
+                        <td><?php echo htmlspecialchars($c['brand'])?></td>
+                        <td><?php echo htmlspecialchars($c['model'])?></td>
+                        <td><?php echo htmlspecialchars($c['year'])?></td>
+                        <td><?php echo htmlspecialchars($c['license_plate'])?></td>
+                        <td><?php echo htmlspecialchars($c['fuel_type'])?></td>
+                        <td><?php echo htmlspecialchars($c['seats'])?></td>
+                        <td><?php echo htmlspecialchars($c['transmission'])?></td>
+                        <td><?php echo htmlspecialchars($c['price_per_day'])?></td>
+                        <td><?php echo htmlspecialchars($c['status'])?></td>
                     </tr>
                 <?php endforeach; ?>
                
