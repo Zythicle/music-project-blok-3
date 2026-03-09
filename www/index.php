@@ -92,8 +92,10 @@ $car = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <!-- Main content -->
 <main>
-    <!-- FILTER -->
-   <div class="search-section">
+   
+</section>
+
+    <div class="search-section">
         <div class="filter-container">
             <!-- Fuel Type Filter -->
             <div class="filter-group">
@@ -105,11 +107,6 @@ $car = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <a href="?fuel_type=Hybrid">Hybrid</a>
         </div>
 </div>
-</section>
-
-    
-<!-- FILTER 2 -->
-    <div class="search-section">
         <div class="filter-container">
             <!-- Fuel Type Filter -->
             <strong>Filter op Prijs per dag:</strong>

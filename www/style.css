@@ -184,8 +184,18 @@ nav a:hover {
 
 .filter-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
+}
+
+.filter-group strong {
+    display: inline;
+    margin-right: 10px;
+}
+
+.filter-container>strong {
+    display: inline;
+    margin-right: 10px;
 }
 
 .filter-group label {
