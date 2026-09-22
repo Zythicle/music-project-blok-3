@@ -1,12 +1,14 @@
 <?php
-$host = "mariadb";
-$user = "root";
-$password = "password";
-$database = "car rental";
 
-$conn = mysqli_connect($host, $user, $password, $database);
+//database connection   
+$dbhost = "mariadb";
+$dbuser = "root";
+$dbpass = "password";
+$dbname = "Figures";
 
+$conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+
+// Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+  // die("Connection failed: " . mysqli_connect_error());
 }
-?>

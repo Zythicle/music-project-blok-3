@@ -1,25 +1,33 @@
-<nav>    
-    <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="about.php">About us</a></li>
-        <li><a href="contact.php">Contact</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLARIS JAPAN</title>
+</head>
+<body>
+    <header>
+<nav>
 
-        <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'employee') { ?>
-            <li><a href="dashboard.php">Dashboard</a></li>
-        <?php } elseif(isset($_SESSION['role']) && $_SESSION['role'] == 'member') { ?>
-            <li><a href="dashboard_user.php">Dashboard</a></li>
-        <?php } ?>
+    <ul class="flex space-x-6">
+      <li><b><a href="#" class="text-gray-300 hover:text-white">SOLARIS JAPAN</a></b></li>
+      <li><b><a href="#" class="text-gray-300 hover:text-white">Figures</a></b></li>
+      <li><b><a href="#" class="text-gray-300 hover:text-white">NextGen</a></b></li>
+      <li><b><a href="#" class="text-gray-300 hover:text-white">Retro</a></b></li>
+      <li><b><a href="#" class="text-gray-300 hover:text-white">Trading Cards</a></b></li>
+      <li><b><a href="#" class="text-gray-300 hover:text-white">Media</a></b></li>
+      <li><b><a href="#" class="text-gray-300 hover:text-white">Goods</a></b></li>
+      <li><b><a href="#" class="text-gray-300 hover:text-white">Micomsoft</a></b></li>
+      <li><b><a href="#" class="text-gray-300 hover:text-white">Blog</a></b></li>
+      <?php if (isset($_SESSION['username'])): ?>
+      <li><b><a href="logout.php" class="text-gray-300 hover:text-white">Logout</a></b></li>
+      <?php else: ?>
+      <li><b><a href="login.php" class="text-gray-300 hover:text-white">Login</a></b></li>
+      <?php endif; ?>
 
-        <?php if(!isset($_SESSION['username'])) { ?>
-        <li><a href="register.php">Register</a></li>
-        <?php } else { ?>
-        <!-- nothing to show -->
-        <?php } ?>
 
-        <?php if(isset($_SESSION['username'])) { ?>
-            <li><a href="logout.php">Logout</a></li>
-        <?php } else { ?>
-            <li><a href="login.php">Login</a></li>
-        <?php } ?>
     </ul>
 </nav>
+    </header>
+</body>
+</html>
