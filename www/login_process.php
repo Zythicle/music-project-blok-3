@@ -1,10 +1,10 @@
 <?php
 
-if (isset($_GET['submit'])) {
-    if (isset($_GET['email']) && isset($_GET['password'])) {
-        if (!empty($_GET['email']) && !empty($_GET['password'])) {
-            $emailForm = $_GET['email'];
-            $passwordForm = $_GET['password'];
+if (isset($_POST['submit'])) {
+    if (isset($_POST['email']) && isset($_POST['password'])) {
+        if (!empty($_POST['email']) && !empty($_POST['password'])) {
+            $emailForm = $_POST['email'];
+            $passwordForm = $_POST['password'];
 
             require 'database.php';
 

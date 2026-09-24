@@ -33,26 +33,26 @@ require 'database.php';
     <link rel="stylesheet" href="style.css">
 </head>
 
-<?php include 'navbar.php'; ?>
 <body>
-    
- <h1>Dashboard</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2>Welkom <?php echo htmlspecialchars($_SESSION['firstname'], ENT_QUOTES, 'UTF-8') ?></h2>
-            </div>
-        </div>
+<?php include 'navbar.php'; ?>
 
-        <div class="row">
-            <div class="col-6">
-                <a href="beheer_users.php" class="btn btn-primary">Beheer users</a>
-            </div>
-            <div class="col-6">
-                <a href="beheer_items.php" class="btn btn-primary">Beheer items</a>
-            </div>
+<main class="dashboard-page">
+    <section class="dashboard-panel">
+        <p class="dashboard-label">ADMIN DASHBOARD</p>
+        <h1>Welkom, <?php echo htmlspecialchars($_SESSION['firstname']); ?> <?php echo htmlspecialchars($_SESSION['lastname']); ?></h1>
+        <p class="dashboard-intro">Beheer gebruikers en figurines vanuit dit overzicht.</p>
+
+        <div class="dashboard-actions">
+            <a href="beheer_users.php" class="dashboard-action">
+                <strong>Beheer users</strong>
+                <span>Bekijk en beheer gebruikersaccounts</span>
+            </a>
+            <a href="beheer_items.php" class="dashboard-action">
+                <strong>Beheer items</strong>
+                <span>Voeg figurines toe of pas ze aan</span>
+            </a>
         </div>
-    </div>
+    </section>
 </main>
 
 </body>

@@ -28,10 +28,14 @@ require 'database.php';
 
 <?php include 'navbar.php'; ?>
 <body>
-    
-<h1>Welcome to the Dashboard</h1>
-
-
+<main class="dashboard-page">
+    <section class="dashboard-panel user-dashboard-panel">
+        <p class="dashboard-label">MY DASHBOARD</p>
+        <h1>Welkom, <?php echo htmlspecialchars($_SESSION['firstname'], ENT_QUOTES, 'UTF-8'); ?></h1>
+        <p class="dashboard-intro">Bekijk onze collectie figurines en ontdek je volgende favoriet.</p>
+        <a href="index.php" class="dashboard-primary-action">Bekijk figurines</a>
+    </section>
+</main>
 
 </body>
 <?php include 'footer.php'; ?>

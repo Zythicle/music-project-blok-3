@@ -117,13 +117,165 @@
      }
  }
 
+ .dashboard-page {
+     display: flex;
+     justify-content: center;
+     padding: 60px 20px;
+ }
+
+ .dashboard-panel {
+     box-sizing: border-box;
+     width: min(100%, 760px);
+     padding: 42px;
+     background-color: white;
+     border: 1px solid #ddd;
+     border-top: 5px solid #ec0909;
+     border-radius: 8px;
+     box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+     text-align: center;
+ }
+
+ .dashboard-label {
+     margin: 0 0 10px;
+     color: #ec0909;
+     font-size: 12px;
+     font-weight: bold;
+     letter-spacing: 1px;
+ }
+
+ .dashboard-panel h1 {
+     margin: 0 0 10px;
+ }
+
+ .dashboard-intro {
+     margin: 0 auto 30px;
+     color: #555;
+ }
+
+ .dashboard-actions {
+     display: grid;
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+     gap: 18px;
+ }
+
+ .dashboard-action {
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+     padding: 22px;
+     border: 1px solid #eee;
+     border-radius: 6px;
+     background-color: #f9f9f9;
+     color: #222;
+     text-decoration: none;
+     text-align: left;
+ }
+
+ .dashboard-action strong {
+     color: #ec0909;
+     font-size: 18px;
+ }
+
+ .dashboard-action span {
+     color: #555;
+     font-size: 14px;
+ }
+
+ .dashboard-action:hover,
+ .dashboard-action:focus {
+     border-color: #ec0909;
+     box-shadow: 0 3px 8px rgba(236, 9, 9, .15);
+ }
+
+ .dashboard-primary-action {
+     display: inline-block;
+     padding: 12px 24px;
+     border-radius: 5px;
+     background-color: #ec0909;
+     color: white;
+     font-weight: bold;
+     text-decoration: none;
+ }
+
+ .dashboard-primary-action:hover,
+ .dashboard-primary-action:focus {
+     background-color: #c70707;
+ }
+
+ .login-page {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 60vh;
+     padding: 60px 20px;
+ }
+
+ .login-form {
+     box-sizing: border-box;
+     width: min(100%, 420px);
+     padding: 36px;
+     background-color: white;
+     border: 1px solid #ddd;
+     border-top: 5px solid #ec0909;
+     border-radius: 8px;
+     box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+     text-align: center;
+ }
+
+ .login-form h1 {
+     margin: 0 0 26px;
+ }
+
+ .login-form .form-group {
+     margin-bottom: 18px;
+     text-align: left;
+ }
+
+ .login-form label {
+     display: block;
+     margin-bottom: 6px;
+     font-weight: bold;
+ }
+
+ .login-form input {
+     box-sizing: border-box;
+     width: 100%;
+     padding: 12px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     font-size: 16px;
+ }
+
+ .login-form input:focus {
+     outline: 2px solid #ec0909;
+     border-color: transparent;
+ }
+
+ .login-form .dashboard-primary-action {
+     width: 100%;
+     border: 0;
+     margin-top: 8px;
+     font-size: 16px;
+     cursor: pointer;
+ }
+
+ @media (max-width: 560px) {
+     .dashboard-panel {
+         padding: 30px 20px;
+     }
+
+     .dashboard-actions {
+         grid-template-columns: 1fr;
+     }
+ }
+
  main>.flex-container {
      grid-column: 1;
      grid-row: 1;
  }
 
  header {
-     padding: 10px 0;
+     padding: 0px 0;
  }
 
  nav {
@@ -162,18 +314,56 @@
  }
 
  .product-card {
+     box-sizing: border-box;
      min-width: 0;
      padding: 20px;
+     background-color: white;
+     border: 1px solid #ddd;
+     border-top: 5px solid #ec0909;
      border-radius: 8px;
+     box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
      display: flex;
      flex-direction: column;
-     align-items: right;
+     align-items: center;
+     transition: box-shadow .2s ease, transform .2s ease;
+ }
+
+ .product-card:hover {
+     box-shadow: 0 6px 18px rgba(236, 9, 9, .2);
+     transform: translateY(-2px);
+ }
+
+ .product-card .MikuAfbeelding {
+     display: flex;
+     justify-content: center;
+     width: 100%;
+ }
+
+ .product-card img {
+     width: 200px;
+     height: 200px;
+     max-width: 100%;
+     object-fit: contain;
  }
 
  .product-info h3 {
      font-size: 16px;
      overflow-wrap: break-word;
      margin: 10px 0;
+ }
+
+ .product-card .btn {
+     padding: 10px 16px;
+     border-radius: 5px;
+     background-color: #ec0909;
+     color: white;
+     font-weight: bold;
+     text-decoration: none;
+ }
+
+ .product-card .btn:hover,
+ .product-card .btn:focus {
+     background-color: #c70707;
  }
 
  .button.button1 {
