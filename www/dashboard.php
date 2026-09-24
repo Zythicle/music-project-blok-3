@@ -21,18 +21,6 @@ if ($_SESSION['role'] != 'admin') {
 
 require 'database.php';
 
-
-$sql = [];
-$query = "SELECT COUNT(*) AS total FROM Users";
-$users = $conn->query($query)->fetch(PDO::FETCH_ASSOC);
-array_push($sql, $query);
-
-
-$query = "SELECT COUNT(*) AS total FROM Figurine";
-$figurines = $conn->query($query)->fetch(PDO::FETCH_ASSOC);
-array_push($sql, $query);
-
-
 ?>
 
 
@@ -53,20 +41,15 @@ array_push($sql, $query);
         <div class="row">
             <div class="col-12">
                 <h2>Welkom <?php echo htmlspecialchars($_SESSION['firstname'], ENT_QUOTES, 'UTF-8') ?></h2>
-                <p>Je bent ingelogd als <?php echo htmlspecialchars($_SESSION['role'], ENT_QUOTES, 'UTF-8') ?></p>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="card">
-            <div class="card-group">
-                <h2 for="">Totaal aantal gebruikers</h2>
-                <p><?php echo htmlspecialchars($users['total'], ENT_QUOTES, 'UTF-8') ?></p>
+
+        <div class="row">
+            <div class="col-6">
+                <a href="beheer_users.php" class="btn btn-primary">Beheer users</a>
             </div>
-           
-            <div class="card-group">
-                <h2 for="">Totaal aantal soorten figurines</h2>
-                <p><?php echo htmlspecialchars($figurines['total'], ENT_QUOTES, 'UTF-8') ?></p>
+            <div class="col-6">
+                <a href="beheer_items.php" class="btn btn-primary">Beheer items</a>
             </div>
         </div>
     </div>

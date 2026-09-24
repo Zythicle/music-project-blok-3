@@ -39,7 +39,12 @@ $figurines = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="product-info">
                   <h3><?php echo htmlspecialchars($figurine['title']); ?></h3>
+
+
+
+                  PRICE: <?php echo number_format($figurine['price'], 2, ',', ''); ?>
                 </div>
+
 
 
               <a href="product_details.php?title=<?php echo htmlspecialchars($figurine['title']); ?>" class="btn btn-primary">Bekijk details</a>

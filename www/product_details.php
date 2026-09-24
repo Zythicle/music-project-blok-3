@@ -1,7 +1,6 @@
 <?php
 
 require 'database.php';
-include 'navbar.php';
 
 if (!isset($_GET['title']) || $_GET['title'] === '') {
     header('Location: index.php');
@@ -13,10 +12,12 @@ $stmt = $conn->prepare("SELECT * FROM Figurine WHERE title = :title");
 $stmt->execute(['title' => $title]);
 $figurine = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!$figurine) {
+if ($figurine === false) {
     header('Location: index.php');
     exit;
 }
+
+include 'navbar.php';
 
 ?>
 
@@ -31,14 +32,17 @@ if (!$figurine) {
 
 <article class="product-card">
 <div class="product-info">
+
+<div class="MikuAfbeelding">
+                    <img src="<?php echo htmlspecialchars($figurine['image']); ?>" alt="<?php echo htmlspecialchars($figurine['title']); ?>" width="200" height="200" />
+                </div>
+                
                   <h3><?php echo htmlspecialchars($figurine['title']); ?></h3>
                 </div>
                 <p><?php echo htmlspecialchars($figurine['character']) . ' - ' . htmlspecialchars($figurine['figure_type']) . ' - ' . htmlspecialchars($figurine['manufacturer']); ?></p>
 
 
-                <div class="MikuAfbeelding">
-                    <img src="<?php echo htmlspecialchars($figurine['image']); ?>" alt="<?php echo htmlspecialchars($figurine['title']); ?>" width="200" height="200" />
-                </div>
+            
         <button class="button button1">
                     <h2>BRAND NEW</h2>
                     <span>
