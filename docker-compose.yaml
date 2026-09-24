@@ -6,6 +6,8 @@ services:
     volumes:
       - ./www:/var/www/html
       - ./vendor:/var/www/vendor
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
       - "80:80"
     depends_on:

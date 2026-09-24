@@ -1,6 +1,7 @@
 <?php
 
 require 'database.php';
+include 'navbar.php';
 
 if (!isset($_GET['title']) || $_GET['title'] === '') {
     header('Location: index.php');
@@ -8,7 +9,7 @@ if (!isset($_GET['title']) || $_GET['title'] === '') {
 }
 
 $title = $_GET['title'];
-$stmt = $conn->prepare("SELECT * FROM Figurines WHERE title = :title");
+$stmt = $conn->prepare("SELECT * FROM Figurine WHERE title = :title");
 $stmt->execute(['title' => $title]);
 $figurine = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -22,18 +23,32 @@ if (!$figurine) {
 
 <main>
 
-<div class>
+<link rel="stylesheet" href="style.css">
 
-<h3><?php echo htmlspecialchars($figurine['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
-<p><?php echo htmlspecialchars($figurine['character'], ENT_QUOTES, 'UTF-8'); ?> , <?php echo htmlspecialchars($figurine['figure_type'], ENT_QUOTES, 'UTF-8'); ?></p>
+<div class="Product">
 
-<button class="button button1">
+<a href="index.php" class="btn btn-primary"><-- Terug naar de winkel</a>
+
+<article class="product-card">
+<div class="product-info">
+                  <h3><?php echo htmlspecialchars($figurine['title']); ?></h3>
+                </div>
+                <p><?php echo htmlspecialchars($figurine['character']) . ' - ' . htmlspecialchars($figurine['figure_type']) . ' - ' . htmlspecialchars($figurine['manufacturer']); ?></p>
+
+
+                <div class="MikuAfbeelding">
+                    <img src="<?php echo htmlspecialchars($figurine['image']); ?>" alt="<?php echo htmlspecialchars($figurine['title']); ?>" width="200" height="200" />
+                </div>
+        <button class="button button1">
                     <h2>BRAND NEW</h2>
                     <span>
-                        <h1><?php echo number_format((float) $figurine['price'], 2, ',', ''); ?></h1>
+                        <h1><?php echo number_format($figurine['price'], 2, ',', ''); ?></h1>
                     </span>
                 </button>
+</article>
 
 </div>
  
 </main>
+
+<?php include 'footer.php'; ?>

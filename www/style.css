@@ -55,6 +55,19 @@
      padding: 0;
  }
 
+ main {
+     display: grid;
+     grid-template-columns: 350px minmax(0, 1fr);
+     align-items: flex-start;
+     gap: 20px;
+     padding: 20px;
+ }
+
+ main>.flex-container {
+     grid-column: 1;
+     grid-row: 1;
+ }
+
  header {
      padding: 10px 0;
  }
@@ -85,12 +98,22 @@
  }
 
  .Product {
-     width: 200px;
+     grid-column: 2;
+     grid-row: 1;
+     min-width: 0;
+     display: grid;
+     grid-template-columns: repeat(3, minmax(0, 1fr));
+     gap: 20px;
+     text-align: center;
+ }
+
+ .product-card {
+     min-width: 0;
      padding: 20px;
      border-radius: 8px;
-     text-align: center;
-     order: 3;
-     flex-wrap: wrap;
+     display: flex;
+     flex-direction: column;
+     align-items: right;
  }
 
  .product-info h3 {

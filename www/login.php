@@ -1,3 +1,11 @@
+<?php 
+
+include 'navbar.php';
+
+?>
+
+<link rel="stylesheet" href="style.css">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +14,8 @@
     <title>Login - SOLARIS JAPAN</title>
 </head>
 <body>
-    
-<form>
-<div class="container">
-
-        <form action="login_process.php" method="post">
+    <div class="container">
+        <form action="login_process.php" method="get">
             <div class="form-group">
 
                 <label for="email">Email</label>
@@ -21,8 +26,9 @@
                 <input type="password" name="password" placeholder="password">
             </div>
             <button name="submit" class="btn btn-success">Inloggen</button>
+        </form>
 </div>
-</form>
 
 </body>
+
 </html>

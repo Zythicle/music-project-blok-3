@@ -1,14 +1,13 @@
 <?php
 
-//database connection   
-$dbhost = "mariadb";
-$dbuser = "root";
-$dbpass = "password";
-$dbname = "Figures";
+$dbhost = 'mariadb';
+$dbname = 'Figures';
+$dbuser = 'root';
+$dbpass = 'password';
 
-$conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
-
-// Check connection
-if (!$conn) {
-  // die("Connection failed: " . mysqli_connect_error());
+try {
+    $conn = new PDO("mysql:host=$dbhost;dbname=$dbname;charset=utf8mb4", $dbuser, $dbpass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die('Connection failed: ' . $e->getMessage());
 }
