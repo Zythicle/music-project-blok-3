@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+
 require 'database.php';
 
 if (!isset($_GET['title']) || $_GET['title'] === '') {
@@ -36,7 +39,7 @@ include 'navbar.php';
 <div class="MikuAfbeelding">
                     <img src="<?php echo htmlspecialchars($figurine['image']); ?>" alt="<?php echo htmlspecialchars($figurine['title']); ?>" width="200" height="200" />
                 </div>
-                
+
                   <h3><?php echo htmlspecialchars($figurine['title']); ?></h3>
                 </div>
                 <p><?php echo htmlspecialchars($figurine['character']) . ' - ' . htmlspecialchars($figurine['figure_type']) . ' - ' . htmlspecialchars($figurine['manufacturer']); ?></p>

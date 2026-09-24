@@ -67,6 +67,7 @@
      display: flex;
      justify-content: center;
      padding: 60px 20px;
+     align-items: center;
  }
 
  .admin-panel {
@@ -79,9 +80,6 @@
      border-radius: 8px;
      box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
      text-align: center;
-     display: flex;
-     align-items: center;
-     justify-content: center;
  }
 
  .admin-panel h1 {
