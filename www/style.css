@@ -259,6 +259,70 @@
      cursor: pointer;
  }
 
+ .add-figurine-page {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 60vh;
+     padding: 60px 20px;
+ }
+
+ .figurine-form {
+     box-sizing: border-box;
+     width: min(100%, 560px);
+     padding: 36px;
+     background-color: white;
+     border: 1px solid #ddd;
+     border-top: 5px solid #ec0909;
+     border-radius: 8px;
+     box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+     text-align: center;
+ }
+
+ .figurine-form h1 {
+     margin: 0 0 26px;
+     text-align: center;
+ }
+
+ .figurine-form-group {
+     margin-bottom: 18px;
+ }
+
+ .figurine-form label {
+     display: block;
+     margin-bottom: 6px;
+     font-weight: bold;
+     text-align: center;
+ }
+
+ .figurine-form input {
+     box-sizing: border-box;
+     width: 100%;
+     padding: 12px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     font-size: 16px;
+     text-align: center;
+ }
+
+ .figurine-form input:focus {
+     outline: 2px solid #ec0909;
+     border-color: transparent;
+ }
+
+ .figurine-form input[type="file"] {
+     padding: 9px;
+ }
+
+ .figurine-form .dashboard-primary-action {
+     width: 100%;
+     border: 0;
+     margin-top: 8px;
+     font-size: 16px;
+     cursor: pointer;
+     text-align: center;
+ }
+
  @media (max-width: 560px) {
      .dashboard-panel {
          padding: 30px 20px;
